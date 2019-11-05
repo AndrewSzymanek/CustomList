@@ -16,7 +16,6 @@ namespace UnitTestProject1
             int actual;
             int number1 = 5;
 
-
             //act
             list1.Add(number1);
             actual = list1.Count;
@@ -24,7 +23,6 @@ namespace UnitTestProject1
             //assert
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod]
         public void CustomList_Add_CheckIndexValue()
@@ -51,8 +49,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void CustomList_Add_CheckingCapacityResizing()
         {
-
-
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             int expected = 8;
@@ -73,14 +69,11 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
         public void CustomList_Add_CountAfterAddedCapacity()
         {
-
-
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             int expected = 5;
@@ -101,7 +94,6 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected, actual);
-
         }
         [TestMethod]
         public void CustomList_Add_CheckBoolFalseOrNot()
@@ -112,13 +104,11 @@ namespace UnitTestProject1
             bool actual;
             bool bool1 = false;
 
-
             //act
             list1.Add(bool1);
             actual = list1[0];
 
-
-            //assert
+           //assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
