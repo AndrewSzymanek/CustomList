@@ -9,14 +9,14 @@ namespace CustomList
     public class CustomList<T> 
     {
         //member variables
-        
+        T[] items;
         private int count;
         public int Count
         {
             get
             { return count; }
         }
-        private int capacity = 4;
+        private int capacity;
         public int Capacity
         {
             get
@@ -25,36 +25,52 @@ namespace CustomList
             }
             set
             {
-                if(count == capacity)
-                {
-                    capacity = (capacity * 2);
-                }
+                capacity = value;
             }
         }
 
         //constructor
         //CustomList<int> list1 = new CustomList<int>();
-
+        public CustomList()
+        {
+            capacity = 4;
+            items = new T[capacity];
+        }
 
         //member methods
         public void Add(T item)
         {
-            T[] items = new T[capacity];
-            for (int i = 0; i <= capacity; i++)
+            T[] newArray = null;
+            if (count == capacity)
             {
-                items[i] = item;
+                capacity *= 2;
+                newArray = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = items[i];
+                    
+                }
             }
-           
+
+            items[count] = item;
+            items = newArray;
             count++;
+            //change the order of things so items doesn't get wiped out down here
             //how to keep adding items?
             //for loop?
             //how do we know when to stop?
         }
         public void Resize()
         {
+                
             if (count == capacity)
             {
-                capacity *= 2;
+                capacity *= 2;               
+                T[] newArray = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = items[i];
+                }
             }
         }
         //public void KeepCount()
