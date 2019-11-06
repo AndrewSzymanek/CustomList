@@ -28,6 +28,10 @@ namespace CustomList
                 capacity = value;
             }
         }
+        public T this[int index]
+        {
+            get { return items[index];}
+        }
 
         //constructor
         //CustomList<int> list1 = new CustomList<int>();
@@ -38,22 +42,15 @@ namespace CustomList
         }
 
         //member methods
+       
         public void Add(T item)
         {
-            T[] newArray = null;
+
             if (count == capacity)
             {
-                capacity *= 2;
-                newArray = new T[capacity];
-                for (int i = 0; i < count; i++)
-                {
-                    newArray[i] = items[i];
-                    
-                }
+                Resize();
             }
-
             items[count] = item;
-            items = newArray;
             count++;
             //change the order of things so items doesn't get wiped out down here
             //how to keep adding items?
@@ -65,12 +62,13 @@ namespace CustomList
                 
             if (count == capacity)
             {
-                capacity *= 2;               
+                capacity *= 2;
                 T[] newArray = new T[capacity];
                 for (int i = 0; i < count; i++)
                 {
                     newArray[i] = items[i];
                 }
+                items = newArray;
             }
         }
         //public void KeepCount()
