@@ -30,7 +30,7 @@ namespace CustomList
         }
         public T this[int index]
         {
-            get { return items[index];}
+            get {return items[index];}
         }
 
         //constructor
@@ -45,23 +45,15 @@ namespace CustomList
        
         public void Add(T item)
         {
-
             if (count == capacity)
             {
                 Resize();
             }
             items[count] = item;
             count++;
-            //change the order of things so items doesn't get wiped out down here
-            //how to keep adding items?
-            //for loop?
-            //how do we know when to stop?
         }
         public void Resize()
-        {
-                
-            if (count == capacity)
-            {
+        {                          
                 capacity *= 2;
                 T[] newArray = new T[capacity];
                 for (int i = 0; i < count; i++)
@@ -69,20 +61,6 @@ namespace CustomList
                     newArray[i] = items[i];
                 }
                 items = newArray;
-            }
         }
-        //public void KeepCount()
-        //{
-
-        //}
-        //public void DisplayCapacity()
-        //{
-
-        //}
-
-        //add method
-
-        //call the resize method in the add(probably also have a method that tracks that count/capacity)?
-
     }
 }

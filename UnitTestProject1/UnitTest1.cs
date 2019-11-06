@@ -130,5 +130,6 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
             //good for overloaded plus operator!
         }
+        [TestMethod]
     }
 }
