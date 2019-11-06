@@ -151,7 +151,7 @@ namespace UnitTestProject1
             list1.Add(string2);
             list1.Add(string3);
             list1.Add(string4);
-            list1.Remove(items[2]);
+            list1.Remove("what up");
             actual = list1.Count;
 
             //assert
@@ -174,43 +174,45 @@ namespace UnitTestProject1
             list1.Add(string2);
             list1.Add(string3);
             list1.Add(string4);
-            list1.Remove(items[2,3]);
+            list1.Remove(list1[2]);
+            list1.Remove(list1[2]);
             actual = list1.Count;
 
             //assert
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
-        public void CustomList_Remove_CheckCapacityAfterRemovingTwoItems()
-        {
-            //arrange
-            CustomList<int> list1 = new CustomList<int>();
-            int expected = 4;
-            int actual;
-            int number1 = 5;
-            int number2 = 5;
-            int number3 = 5;
-            int number4 = 5;
-            int number5 = 5;
+        //[TestMethod]
+        //public void CustomList_Remove_CheckCapacityAfterRemovingTwoItems()
+        //{
+        //    //arrange
+        //    CustomList<int> list1 = new CustomList<int>();
+        //    int expected = 4;
+        //    int actual;
+        //    int number1 = 5;
+        //    int number2 = 5;
+        //    int number3 = 5;
+        //    int number4 = 5;
+        //    int number5 = 5;
 
-            //act
-            list1.Add(number1);
-            list1.Add(number2);
-            list1.Add(number3);
-            list1.Add(number4);
-            list1.Add(number5);
-            list1.Remove(items[2,3]);
-            actual = list1.Capacity;
+        //    //act
+        //    list1.Add(number1);
+        //    list1.Add(number2);
+        //    list1.Add(number3);
+        //    list1.Add(number4);
+        //    list1.Add(number5);
+        //    list1.Remove(list1[2]);
+        //    list1.Remove(list1[3]);
+        //    actual = list1.Capacity;
 
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //assert
+        //    Assert.AreEqual(expected, actual);
+        //}
         [TestMethod]
         public void CustomList_Remove_CheckIndexValueCorrectAfterRemovingAnIndex()
         {
             //arrange
             CustomList<string> list1 = new CustomList<string>();
-            string expected = "hello";
+            string expected = "what up";
             string actual;
             string string1 = "hi";
             string string2 = "hello";
@@ -222,8 +224,8 @@ namespace UnitTestProject1
             list1.Add(string2);
             list1.Add(string3);
             list1.Add(string4);
-            list1.Remove(items[0]);
-            actual = list1[0];
+            list1.Remove("hello");
+            actual = list1[1];
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -246,7 +248,8 @@ namespace UnitTestProject1
             list1.Add(string2);
             list1.Add(string3);
             list1.Add(string4);
-            list1.Remove(items[0,1]);
+            list1.Remove("hi");
+            list1.Remove("hello");
             actual = list1[0];
 
             //assert

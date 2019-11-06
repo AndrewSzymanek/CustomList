@@ -60,7 +60,37 @@ namespace CustomList
                     newArray[i] = items[i];
                 }
                 items = newArray;
-            //figure out how to resize it back down when capacity is suddenly too big for the count
+            
+        }
+        public void Remove(T item)
+        {
+            T[] newArray;
+            for (int i = 0; i < count; i++)
+            {
+                if(items[i].Equals(item))
+                {                       
+                        count--;
+                    if (count == 0)
+                    {
+                        items = new T[capacity];
+                    }
+                    else
+                    {
+                        newArray = new T[count];
+                        for (int j = 0; j < count; j++)
+                        {
+                            newArray[j] = items[j];
+                            
+                        }
+                        for (int k = i + 1; k <= count; k++)
+                        {
+                            newArray[k - 1] = items[k];                          
+                        }
+                        items = newArray;
+                    }
+
+                }
+            }
         }
     }
 }
