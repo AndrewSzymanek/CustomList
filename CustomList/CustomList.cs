@@ -9,9 +9,9 @@ namespace CustomList
     public class CustomList<T> 
     {
         //member variables
-        private int count { get; }
-        public int Capacity { get; set; }
-        T[] items; = new T[4];
+        public int Count { get; }
+        private int Capacity { get; set; }
+        T[] items = new T[4];
 
         //constructor
 
@@ -20,16 +20,27 @@ namespace CustomList
         //member methods
         public void Add(T item)
         {
-            items[0] = item;
+            items[0] = item; 
         }
-        public void Resize()
-        {
+        //public void Resize()
+        //{
+        //    if (count == capacity)
+        //    {
 
-        }
+        //    }
+        //}
+        //public void KeepCount()
+        //{
+
+        //}
+        //public void DisplayCapacity()
+        //{
+
+        //}
 
         //add method
 
-        //call the resize method in the add(probably also have a method that tracks that count/capacity?
+        //call the resize method in the add(probably also have a method that tracks that count/capacity)?
 
     }
 }
