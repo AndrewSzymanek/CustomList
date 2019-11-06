@@ -9,12 +9,34 @@ namespace CustomList
     public class CustomList<T> 
     {
         //member variables
-        public int Count { get; }
-        private int Capacity { get; set; }
-        T[] items = new T[4];
+        private int count;
+        public int Count
+        {
+            get
+            { return count; }
+        }
+        private int capacity = 4;
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                if(count == capacity)
+                {
+                    capacity = (capacity * 2);
+                }
+            }
+        }
+        
+        
+        
+        //T[] items = new T[4];
 
         //constructor
-
+       
 
 
         //member methods
