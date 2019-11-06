@@ -34,7 +34,6 @@ namespace CustomList
         }
 
         //constructor
-        //CustomList<int> list1 = new CustomList<int>();
         public CustomList()
         {
             capacity = 4;
@@ -61,6 +60,7 @@ namespace CustomList
                     newArray[i] = items[i];
                 }
                 items = newArray;
+            //figure out how to resize it back down when capacity is suddenly too big for the count
         }
     }
 }
