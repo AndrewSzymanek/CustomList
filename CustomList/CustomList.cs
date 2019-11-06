@@ -9,6 +9,7 @@ namespace CustomList
     public class CustomList<T> 
     {
         //member variables
+        
         private int count;
         public int Count
         {
@@ -30,27 +31,32 @@ namespace CustomList
                 }
             }
         }
-        
-        
-        
-        //T[] items = new T[4];
 
         //constructor
-       
+        //CustomList<int> list1 = new CustomList<int>();
 
 
         //member methods
         public void Add(T item)
         {
-            items[0] = item; 
+            T[] items = new T[capacity];
+            for (int i = 0; i <= capacity; i++)
+            {
+                items[i] = item;
+            }
+           
+            count++;
+            //how to keep adding items?
+            //for loop?
+            //how do we know when to stop?
         }
-        //public void Resize()
-        //{
-        //    if (count == capacity)
-        //    {
-
-        //    }
-        //}
+        public void Resize()
+        {
+            if (count == capacity)
+            {
+                capacity *= 2;
+            }
+        }
         //public void KeepCount()
         //{
 
