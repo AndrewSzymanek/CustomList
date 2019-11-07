@@ -269,10 +269,10 @@ namespace UnitTestProject1
           
             //act
             
-            actual =;
+            //actual =;
 
             //assert
-            Assert.AreEqual(expected, actual);
+           // Assert.AreEqual(expected, actual);
         }
 
         /////// OVERLOADING + OPERATOR METHOD TESTS ///////
@@ -283,9 +283,10 @@ namespace UnitTestProject1
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
-            CustomList<int> list3 = new CustomList<int>();
-            CustomList<int> expected = list3;
             CustomList<int> actual;
+           // CustomList<int> expected = new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
+            //IEnumerable needed to access that list above
+       
 
             //act
             list1.Add(1);
@@ -294,17 +295,10 @@ namespace UnitTestProject1
             list2.Add(4);
             list2.Add(5);
             list2.Add(6);
-            list3.Add(1);
-            list3.Add(2);
-            list3.Add(3);
-            list3.Add(4);
-            list3.Add(5);
-            list3.Add(6);
-
-            
-            actual = (list1 + list2);
+            actual = list1 + list2;
             //assert
-            Assert.AreEqual(expected, actual);
+          //  CollectionAssert.AreEqual(expected, actual);
+           
         }
     }
 }
