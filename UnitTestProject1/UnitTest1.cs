@@ -258,6 +258,44 @@ namespace UnitTestProject1
 
         //////// OVERRIDING TOSTRING METHOD TESTS ////////
 
+        //[TestMethod]
+        //public void CustomList_Override_OverrideStringCreation()
+        //{
+        //    //arrange
+        //    CustomList<int> list1 = new CustomList<int>();
+        //    int expected;
+        //    int actual;
+
+        //    //act
+
+
+        //    //assert
+
+
+        //}
+
+        /////// OVERLOADING + OPERATOR METHOD TESTS ///////
+        
         [TestMethod]
+        public void CustomList_Add_AddTwoListsTogether()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+           
+            CustomList<int> expected;
+            CustomList<int> actual;
+
+            //act
+            list1.Add(1);
+            list1.Add(2);
+            list1.Add(3);
+            list2.Add(4);
+            list2.Add(5);
+            list2.Add(6);
+
+            //assert
+
+        }
     }
 }

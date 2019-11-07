@@ -63,29 +63,22 @@ namespace CustomList
         }
         public void Remove(T item)
         {
-            T[] newArray;
             for (int i = 0; i < count; i++)
             {
                 if(items[i].Equals(item))
-                {                       
-                        count--;
+                {
+                    count--;
                     if (count == 0)
                     {
                         items = new T[capacity];
                     }
                     else
-                    {
-                        newArray = new T[count];
-                        for (int j = 0; j < count; j++)
-                        {
-                            newArray[j] = items[j];                            
-                        }
+                    {                    
                         for (int k = i + 1; k <= count; k++)
                         {
-                            newArray[k - 1] = items[k];                          
+                            items[k - 1] = items[k];
                         }
-                        items = newArray;
-                    }
+                    }                  
                 }
             }
         }
