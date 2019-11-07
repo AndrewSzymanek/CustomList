@@ -256,5 +256,8 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
+        //////// OVERRIDING TOSTRING METHOD TESTS ////////
+
+        [TestMethod]
     }
 }
