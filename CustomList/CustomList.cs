@@ -59,8 +59,7 @@ namespace CustomList
                 {
                     newArray[i] = items[i];
                 }
-                items = newArray;
-            
+                items = newArray;          
         }
         public void Remove(T item)
         {
@@ -79,8 +78,7 @@ namespace CustomList
                         newArray = new T[count];
                         for (int j = 0; j < count; j++)
                         {
-                            newArray[j] = items[j];
-                            
+                            newArray[j] = items[j];                            
                         }
                         for (int k = i + 1; k <= count; k++)
                         {
@@ -88,7 +86,6 @@ namespace CustomList
                         }
                         items = newArray;
                     }
-
                 }
             }
         }
