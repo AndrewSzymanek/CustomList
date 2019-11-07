@@ -258,32 +258,33 @@ namespace UnitTestProject1
 
         //////// OVERRIDING TOSTRING METHOD TESTS ////////
 
-        //[TestMethod]
-        //public void CustomList_Override_OverrideStringCreation()
-        //{
-        //    //arrange
-        //    CustomList<int> list1 = new CustomList<int>();
-        //    int expected;
-        //    int actual;
+        [TestMethod]
+        public void CustomList_Override_OverrideStringCreation()
+        {
+            //arrange
+            CustomList<string> list1 = new CustomList<string>();
+            string expected;
+            string actual;
 
-        //    //act
+          
+            //act
+            
+            actual =;
 
-
-        //    //assert
-
-
-        //}
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
 
         /////// OVERLOADING + OPERATOR METHOD TESTS ///////
-        
+
         [TestMethod]
         public void CustomList_Add_AddTwoListsTogether()
         {
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
-           
-            CustomList<int> expected;
+            CustomList<int> list3 = new CustomList<int>();
+            CustomList<int> expected = list3;
             CustomList<int> actual;
 
             //act
@@ -293,9 +294,17 @@ namespace UnitTestProject1
             list2.Add(4);
             list2.Add(5);
             list2.Add(6);
+            list3.Add(1);
+            list3.Add(2);
+            list3.Add(3);
+            list3.Add(4);
+            list3.Add(5);
+            list3.Add(6);
 
+            
+            actual = (list1 + list2);
             //assert
-
+            Assert.AreEqual(expected, actual);
         }
     }
 }
