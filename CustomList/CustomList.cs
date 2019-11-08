@@ -82,13 +82,17 @@ namespace CustomList
                 }
             }
         }
-        //public override string ToString()
-        //{
+        public override string ToString()
+        {
+            string listString = "";
+            for(int i = 0; i < count; i++)
+            {
+                listString += (items[i].ToString());
+            }
+            return listString;
+        }
 
-
-        //}
-
-        public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
+        public static CustomList<T> operator + (CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
             for (int i = 0; i < list1.Count; i++)

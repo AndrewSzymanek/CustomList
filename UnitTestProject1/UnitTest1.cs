@@ -259,21 +259,75 @@ namespace UnitTestProject1
         //////// OVERRIDING TOSTRING METHOD TESTS ////////
 
         [TestMethod]
-        public void CustomList_Override_OverrideStringCreation()
+        public void CustomList_Override_CharToString()
         {
             //arrange
-            CustomList<string> list1 = new CustomList<string>();
-            string expected;
+            CustomList<char> list1 = new CustomList<char>();
+            string expected = "hello";
             string actual;
 
-          
+            char char1 = 'h';
+            char char2 = 'e';
+            char char3 = 'l';
+            char char4 = 'l';
+            char char5 = 'o';
+
             //act
-            
-            //actual =;
+            list1.Add(char1);
+            list1.Add(char2);
+            list1.Add(char3);
+            list1.Add(char4);
+            list1.Add(char5);
+
+
+            actual = list1.ToString();
 
             //assert
-           // Assert.AreEqual(expected, actual);
+           Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+
+        public void CustomList_Override_IntToString()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            string expected = "8";
+            string actual;
+
+            int int8 = 8;
+
+            //act
+            list1.Add(8);
+
+            actual = list1.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+
+        public void CustomList_Override_BoolToString()
+        {
+            //arrange
+            CustomList<bool> list1 = new CustomList<bool>();
+            string expected = "False";
+            string actual;
+
+            bool falseBool = false;
+
+            //act
+            list1.Add(falseBool);
+
+            actual = list1.ToString();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
 
         /////// OVERLOADING + OPERATOR METHOD TESTS ///////
 
@@ -283,22 +337,38 @@ namespace UnitTestProject1
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
-            CustomList<int> actual;
-           // CustomList<int> expected = new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>();
+            CustomList<int> expected = list3;
+           
             //IEnumerable needed to access that list above
-       
+
+            int int1 = 1;
+            int int2 = 2;
+            int int3 = 3;
+            int int4 = 4;
+            int int5 = 5;
+            int int6 = 6;
+
 
             //act
-            list1.Add(1);
-            list1.Add(2);
-            list1.Add(3);
-            list2.Add(4);
-            list2.Add(5);
-            list2.Add(6);
-            actual = list1 + list2;
+            list1.Add(int1);
+            list1.Add(int2);
+            list1.Add(int3);
+            list2.Add(int4);
+            list2.Add(int5);
+            list2.Add(int6);
+            list3.Add(int1);
+            list3.Add(int2);
+            list3.Add(int3);
+            list3.Add(int4);
+            list3.Add(int5);
+            list3.Add(int6);
+
+            CustomList<string> actual = (list1.ToString() + list2.ToString());
+
             //assert
-          //  CollectionAssert.AreEqual(expected, actual);
-           
+            Assert.AreEqual(expected, actual);
+
         }
     }
 }
