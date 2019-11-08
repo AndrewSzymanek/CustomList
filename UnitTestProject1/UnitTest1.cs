@@ -481,7 +481,7 @@ namespace UnitTestProject1
             CustomList<char> actual = list1.Zip(list2);
 
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.ToString(), actual.ToString());
 
         }
     }
