@@ -367,7 +367,7 @@ namespace UnitTestProject1
         ////// MINUS OPERATOR TEST METHODS //////
 
         [TestMethod]
-        public void CustomList_Subtract_SubtrctTwoListsIntsTogether()
+        public void CustomList_Subtract_SubtractTwoListsIntsTogether()
         {
             //arrange
             CustomList<int> list1 = new CustomList<int>();
