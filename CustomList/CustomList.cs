@@ -97,12 +97,16 @@ namespace CustomList
             CustomList<T> newList = new CustomList<T>();
             for (int i = 0; i < list1.Count; i++)
             {
+               
                 newList.Add(list1[i]);
+                
             }
-            for (int i = 0; i < list2.count; i++)
+            for (int i = 0; i < list2.Count; i++)
             {
-                newList.Add(list2[i]);
+                
+                newList.Add(list2[i]);                
             }
+           
             return newList;
         }
 

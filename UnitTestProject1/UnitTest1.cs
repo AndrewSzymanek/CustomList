@@ -337,8 +337,7 @@ namespace UnitTestProject1
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
-            CustomList<int> list3 = new CustomList<int>();
-            CustomList<int> expected = list3;
+            string expected = "123456";
            
             //IEnumerable needed to access that list above
 
@@ -357,17 +356,11 @@ namespace UnitTestProject1
             list2.Add(int4);
             list2.Add(int5);
             list2.Add(int6);
-            list3.Add(int1);
-            list3.Add(int2);
-            list3.Add(int3);
-            list3.Add(int4);
-            list3.Add(int5);
-            list3.Add(int6);
 
-            CustomList<string> actual = (list1.ToString() + list2.ToString());
+            CustomList<int> actual = (list1 + list2);
 
             //assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.ToString());
 
         }
     }
