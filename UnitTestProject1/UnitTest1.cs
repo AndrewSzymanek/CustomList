@@ -130,7 +130,6 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected, actual);
-            //good for overloaded plus operator!
         }
         ///////// REMOVE TEST METHODS //////////
         
@@ -181,32 +180,6 @@ namespace UnitTestProject1
             //assert
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void CustomList_Remove_CheckCapacityAfterRemovingTwoItems()
-        //{
-        //    //arrange
-        //    CustomList<int> list1 = new CustomList<int>();
-        //    int expected = 4;
-        //    int actual;
-        //    int number1 = 5;
-        //    int number2 = 5;
-        //    int number3 = 5;
-        //    int number4 = 5;
-        //    int number5 = 5;
-
-        //    //act
-        //    list1.Add(number1);
-        //    list1.Add(number2);
-        //    list1.Add(number3);
-        //    list1.Add(number4);
-        //    list1.Add(number5);
-        //    list1.Remove(list1[2]);
-        //    list1.Remove(list1[3]);
-        //    actual = list1.Capacity;
-
-        //    //assert
-        //    Assert.AreEqual(expected, actual);
-        //}
         [TestMethod]
         public void CustomList_Remove_CheckIndexValueCorrectAfterRemovingAnIndex()
         {
@@ -327,8 +300,6 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
 
-
-
         /////// OVERLOADING + OPERATOR METHOD TESTS ///////
 
         [TestMethod]
@@ -424,5 +395,66 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual.ToString());
         }
 
+        [TestMethod]
+        public void CustomList_Subtract_SubtrctTwoListsIntsTogetherReturnTwoNumbers()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "12";
+
+            int int1 = 1;
+            int int2 = 2;
+            int int3 = 3;
+            int int4 = 4;
+            int int5 = 4;
+            int int6 = 3;
+
+            //act
+            list1.Add(int1);
+            list1.Add(int2);
+            list1.Add(int3);
+            list2.Add(int4);
+            list2.Add(int5);
+            list2.Add(int6);
+
+            CustomList<int> actual = (list1 - list2);
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+
+        [TestMethod]
+        public void CustomList_Subtract_SubtrctTwoListsIntsTogetherReturnThreeNumbers()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "234";
+
+            int int1 = 1;
+            int int2 = 2;
+            int int3 = 3;
+            int int4 = 4;
+            int int5 = 5;
+            int int6 = 1;
+            int int7 = 1;
+            int int8 = 7;
+
+            //act
+            list1.Add(int1);
+            list1.Add(int2);
+            list1.Add(int3);
+            list1.Add(int4);
+            list2.Add(int5);
+            list2.Add(int6);
+            list2.Add(int7);
+            list2.Add(int8);
+
+            CustomList<int> actual = (list1 - list2);
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
     }
 }

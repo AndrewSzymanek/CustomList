@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         //member variables
         T[] items;
@@ -108,22 +109,29 @@ namespace CustomList
         public static CustomList<T> operator - (CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> newList = new CustomList<T>();
-            for (int i = list1.Count - 1; i >= 0; i--)
+            for(int i = 0; i < list1.Count; i++)
             {
                 bool isEqual = false;
-                for (int j = list2.Count - 1; j >= 0; j--)
+               for(int j = 0; j < list2.Count; j++)
                 {
                     if (list1[i].Equals(list2[j]))
                     {
                         isEqual = true;
                     }
-                    else if(j == 0 && isEqual == false)
+                    else if(j == (list2.Count - 1) && isEqual == false)
                     {
                         newList.Add(list1[i]);
                     }
                 }              
             }                
             return newList;
+        }
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                yield return items[i];
+            }
         }
     }
 }
