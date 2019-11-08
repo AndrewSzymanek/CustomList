@@ -147,12 +147,12 @@ namespace CustomList
             }
             for(int i = 0; i < forLoopCount; i++)
             {
-                if (i <= Count)
+                if (i < Count)
                 {
                     list3.Add(items[i]);
                 }
                 
-                if(i <= list2.count)
+                if(i < list2.count)
                 {
                     list3.Add(list2[i]);
                 }             

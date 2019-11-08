@@ -484,6 +484,33 @@ namespace UnitTestProject1
             Assert.AreEqual(expected.ToString(), actual.ToString());
 
         }
+        [TestMethod]
+        public void CustomList_Zip_ZipperInTwoListsWithDifferentCounts()
+        {
+            //arrange
+            CustomList<char> list1 = new CustomList<char>();
+            CustomList<char> list2 = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>() { 'p', 'o', 'o', 'p', 'y'};
+
+            char char1 = 'p';
+            char char2 = 'o';
+            char char3 = 'o';
+            char char4 = 'p';
+            char char5 = 'y';
+
+            //act
+            list1.Add(char1);
+            list2.Add(char2);
+            list1.Add(char3);
+            list2.Add(char4);
+            list1.Add(char5);
+
+            CustomList<char> actual = list1.Zip(list2);
+
+            //assert
+            Assert.AreEqual(expected.ToString(), actual.ToString());
+
+        }
     }
 }
 
