@@ -133,10 +133,31 @@ namespace CustomList
                 yield return items[i];
             }
         }
-        public void Zip(CustomList<T> list1, CustomList<T> list2)
+        public CustomList<T> Zip(CustomList<T> list2)
         {
             CustomList<T> list3 = new CustomList<T>();
-
+            int forLoopCount;
+            if(Count >= list2.Count)
+            {
+                forLoopCount = Count;
+            }
+            else
+            {
+                forLoopCount = list2.Count;
+            }
+            for(int i = 0; i < forLoopCount; i++)
+            {
+                if (i <= Count)
+                {
+                    list3.Add(items[i]);
+                }
+                
+                if(i <= list2.count)
+                {
+                    list3.Add(list2[i]);
+                }             
+            }
+            return list3;
         }
     }
 }

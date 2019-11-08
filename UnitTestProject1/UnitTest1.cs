@@ -460,14 +460,13 @@ namespace UnitTestProject1
         ////// ZIP METHOD UNIT TESTS ///////
         [TestMethod]
 
-        public void CustomList_Zip_()
+        public void CustomList_Zip_ZipperInTwoListsWithTwoItemsEach()
         {
             //arrange
             CustomList<char> list1 = new CustomList<char>();
             CustomList<char> list2 = new CustomList<char>();
-            CustomList<char> expected = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>() {'p','o','o','p'};
             
-
             char char1 = 'p';
             char char2 = 'o';
             char char3 = 'o';
@@ -479,7 +478,7 @@ namespace UnitTestProject1
             list1.Add(char3);
             list2.Add(char4);
 
-            actual = 
+            CustomList<char> actual = list1.Zip(list2);
 
             //assert
             Assert.AreEqual(expected, actual);
