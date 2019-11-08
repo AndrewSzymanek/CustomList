@@ -133,5 +133,10 @@ namespace CustomList
                 yield return items[i];
             }
         }
+        public void Zip(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> list3 = new CustomList<T>();
+
+        }
     }
 }

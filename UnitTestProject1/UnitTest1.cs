@@ -456,5 +456,37 @@ namespace UnitTestProject1
             //assert
             Assert.AreEqual(expected, actual.ToString());
         }
+
+        ////// ZIP METHOD UNIT TESTS ///////
+        [TestMethod]
+
+        public void CustomList_Zip_()
+        {
+            //arrange
+            CustomList<char> list1 = new CustomList<char>();
+            CustomList<char> list2 = new CustomList<char>();
+            CustomList<char> expected = new CustomList<char>();
+            
+
+            char char1 = 'p';
+            char char2 = 'o';
+            char char3 = 'o';
+            char char4 = 'p';
+
+            //act
+            list1.Add(char1);
+            list2.Add(char2);
+            list1.Add(char3);
+            list2.Add(char4);
+
+            actual = 
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
+
+
+
