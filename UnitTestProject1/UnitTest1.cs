@@ -332,14 +332,12 @@ namespace UnitTestProject1
         /////// OVERLOADING + OPERATOR METHOD TESTS ///////
 
         [TestMethod]
-        public void CustomList_Add_AddTwoListsTogether()
+        public void CustomList_Add_AddTwoListsIntsTogether()
         {
             //arrange
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
             string expected = "123456";
-           
-            //IEnumerable needed to access that list above
 
             int int1 = 1;
             int int2 = 2;
@@ -347,7 +345,6 @@ namespace UnitTestProject1
             int int4 = 4;
             int int5 = 5;
             int int6 = 6;
-
 
             //act
             list1.Add(int1);
@@ -361,7 +358,39 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected, actual.ToString());
+        }
 
+        [TestMethod]
+        public void CustomList_Add_AddTwoListsCharsTogether()
+        {
+            //arrange
+            CustomList<char> list1 = new CustomList<char>();
+            CustomList<char> list2 = new CustomList<char>();
+            string expected = "flamingo";
+
+            char char1 = 'f';
+            char char2 = 'l';
+            char char3 = 'a';
+            char char4 = 'm';
+            char char5 = 'i';
+            char char6 = 'n';
+            char char7 = 'g';
+            char char8 = 'o';
+
+            //act
+            list1.Add(char1);
+            list1.Add(char2);
+            list1.Add(char3);
+            list1.Add(char4);
+            list2.Add(char5);
+            list2.Add(char6);
+            list2.Add(char7);
+            list2.Add(char8);
+
+            CustomList<char> actual = (list1 + list2);
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
         }
     }
 }
