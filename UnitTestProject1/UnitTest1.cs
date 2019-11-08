@@ -392,5 +392,37 @@ namespace UnitTestProject1
             //assert
             Assert.AreEqual(expected, actual.ToString());
         }
+
+        ////// MINUS OPERATOR TEST METHODS //////
+
+        [TestMethod]
+        public void CustomList_Subtract_SubtrctTwoListsIntsTogether()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "1";
+
+            int int1 = 1;
+            int int2 = 2;
+            int int3 = 3;
+            int int4 = 2;
+            int int5 = 2;
+            int int6 = 3;
+
+            //act
+            list1.Add(int1);
+            list1.Add(int2);
+            list1.Add(int3);
+            list2.Add(int4);
+            list2.Add(int5);
+            list2.Add(int6);
+
+            CustomList<int> actual = (list1 - list2);
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+
     }
 }

@@ -96,19 +96,34 @@ namespace CustomList
         {
             CustomList<T> newList = new CustomList<T>();
             for (int i = 0; i < list1.Count; i++)
-            {
-               
-                newList.Add(list1[i]);
-                
+            {             
+                newList.Add(list1[i]);               
             }
             for (int i = 0; i < list2.Count; i++)
-            {
-                
+            {               
                 newList.Add(list2[i]);                
-            }
-           
+            }        
             return newList;
         }
-
+        public static CustomList<T> operator - (CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            for (int i = list1.Count - 1; i >= 0; i--)
+            {
+                bool isEqual = false;
+                for (int j = list2.Count - 1; j >= 0; j--)
+                {
+                    if (list1[i].Equals(list2[j]))
+                    {
+                        isEqual = true;
+                    }
+                    else if(j == 0 && isEqual == false)
+                    {
+                        newList.Add(list1[i]);
+                    }
+                }              
+            }                
+            return newList;
+        }
     }
 }
