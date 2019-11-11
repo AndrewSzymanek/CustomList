@@ -252,7 +252,6 @@ namespace UnitTestProject1
             list1.Add(char4);
             list1.Add(char5);
 
-
             actual = list1.ToString();
 
             //assert
@@ -277,7 +276,6 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected, actual);
-
         }
 
         [TestMethod]
@@ -509,7 +507,6 @@ namespace UnitTestProject1
 
             //assert
             Assert.AreEqual(expected.ToString(), actual.ToString());
-
         }
     }
 }
