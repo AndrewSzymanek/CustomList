@@ -157,6 +157,31 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CustomList_Remove_CheckCountAfterRemovingOneItemThatHasDuplicate()
+        {
+            //arrange
+            CustomList<string> list1 = new CustomList<string>();
+            int expected = 4;
+            int actual;
+            string string1 = "hi";
+            string string2 = "hello";
+            string string3 = "what up";
+            string string4 = "shalom";
+            string string5 = "what up";
+
+            //act
+            list1.Add(string1);
+            list1.Add(string2);
+            list1.Add(string3);
+            list1.Add(string4);
+            list1.Add(string5);
+            list1.Remove("what up");
+            actual = list1.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CustomList_Remove_CheckCountAfterRemovingTwoItems()
         {
             //arrange
@@ -463,12 +488,12 @@ namespace UnitTestProject1
             //arrange
             CustomList<char> list1 = new CustomList<char>();
             CustomList<char> list2 = new CustomList<char>();
-            CustomList<char> expected = new CustomList<char>() {'p','o','o','p'};
+            CustomList<char> expected = new CustomList<char>() {'s','a','n','d'};
             
-            char char1 = 'p';
-            char char2 = 'o';
-            char char3 = 'o';
-            char char4 = 'p';
+            char char1 = 's';
+            char char2 = 'a';
+            char char3 = 'n';
+            char char4 = 'd';
 
             //act
             list1.Add(char1);
@@ -488,13 +513,13 @@ namespace UnitTestProject1
             //arrange
             CustomList<char> list1 = new CustomList<char>();
             CustomList<char> list2 = new CustomList<char>();
-            CustomList<char> expected = new CustomList<char>() { 'p', 'o', 'o', 'p', 'y'};
+            CustomList<char> expected = new CustomList<char>() { 'b', 'e', 'a', 'c', 'h'};
 
-            char char1 = 'p';
-            char char2 = 'o';
-            char char3 = 'o';
-            char char4 = 'p';
-            char char5 = 'y';
+            char char1 = 'b';
+            char char2 = 'e';
+            char char3 = 'a';
+            char char4 = 'c';
+            char char5 = 'h';
 
             //act
             list1.Add(char1);

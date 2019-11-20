@@ -31,7 +31,21 @@ namespace CustomList
         }
         public T this[int index]
         {
-            get { return items[index]; }
+
+
+
+            get
+            {
+                if (index >= 0 && index < Count)
+                {
+                    return items[index];
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+            }
         }
 
         //constructor
@@ -42,7 +56,6 @@ namespace CustomList
         }
 
         //member methods
-
         public void Add(T item)
         {
             if (count == capacity)
@@ -77,9 +90,10 @@ namespace CustomList
                     {
                         for (int j = i + 1; j <= count; j++)
                         {
-                            items[j - 1] = items[j];
+                            items[j - 1] = items[j];                            
                         }
                     }
+                    break;
                 }
             }
         }
@@ -128,10 +142,12 @@ namespace CustomList
         }
         public IEnumerator GetEnumerator()
         {
-            for (int i = 0; i < items.Length; i++)
-            {
-                yield return items[i];
-            }
+           
+                for (int i = 0; i < items.Length; i++)
+                {
+                    yield return items[i];
+                }
+
         }
         public CustomList<T> Zip(CustomList<T> list2)
         {
